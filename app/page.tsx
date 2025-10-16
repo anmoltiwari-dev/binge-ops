@@ -2,6 +2,7 @@ import next from "next";
 import Image from "next/image";
 import Link from "next/link";
 import MovieCard from "./_components/MovieCard";
+import AppBar from "./_components/AppBar";
 
 export default async function Home() {
   const configUrl = "https://api.themoviedb.org/3/configuration";
@@ -28,14 +29,17 @@ export default async function Home() {
   }
 
   return (
-    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4">
-      {movieData.results.map((movie) => (
-        <MovieCard
-          key={movie.id}
-          movie={movie}
-          src={`${configData.images.secure_base_url}${configData.images.poster_sizes[6]}${movie.poster_path}`}
-        />
-      ))}
-    </div>
+    <>
+      <AppBar />
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4">
+        {movieData.results.map((movie) => (
+          <MovieCard
+            key={movie.id}
+            movie={movie}
+            src={`${configData.images.secure_base_url}${configData.images.poster_sizes[6]}${movie.poster_path}`}
+          />
+        ))}
+      </div>
+    </>
   );
 }
