@@ -9,8 +9,7 @@ export default async function Home() {
     method: "GET",
     headers: {
       accept: "application/json",
-      Authorization:
-        "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI5ODZjZGMyMDRmNDM4YjdkMGRkZTkwNTA1NmQxYmM4OCIsIm5iZiI6MTc2MDAyNDk3OS4xNjYwMDAxLCJzdWIiOiI2OGU3ZDk5MzhiNDQwNGU0NWUzMGJmMDgiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.xm6ko66ZkeZ2b39UW40vGywJMtY1ryPEcd6JgUAh1iM",
+      Authorization: `Bearer ${process.env.TMDB_API_TOKEN}`,
     },
   };
   const url =
