@@ -1,5 +1,6 @@
 import MovieCard from "@/app/_components/MovieCard";
 import RedirectButton from "@/app/_components/RedirectButton";
+import AddMovieToWatchList from "@/app/_components/AddMovieToWatchList";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 
@@ -63,6 +64,7 @@ const MoviePage = async ({
           }`}
           alt={movieData?.original_title}
         />
+        <AddMovieToWatchList movie={movieData} />
         <section className="absolute flex flex-col bottom-1 gap-4 p-4">
           <div>
             <h2 className="font-bold text-2xl">{movieData?.original_title}</h2>
